@@ -1,0 +1,1086 @@
+{
+	"info": {
+		"_postman_id": "83e68e51-d296-46c9-86fb-38261fc9b480",
+		"name": "WEBLab",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PenColor",
+			"item": [
+				{
+					"name": "1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"PenColorTest1\",function(){\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"PenColorTest2\",function(){\r",
+									"    pm.response.to.have.body('[]');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44313/api/PenColorREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"PenColorREST"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"PenColorTest3\",function(){\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"PenColorTest4\",function(){\r",
+									"    pm.response.to.have.body('\"ok\"');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":1,\"name\":\"red\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44313/api/PenColorREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"PenColorREST"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "red",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"PenColorTest5\",function(){\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"PenColorTest6\",function(){\r",
+									"    pm.response.to.have.body('\"ok\"');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":2,\"name\":\"white\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44313/api/PenColorREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"PenColorREST"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "red",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3 Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"PenColorTest7\",function(){\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"PenColorTest8\",function(){\r",
+									"    pm.response.to.have.body('\"error\"');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":2,\"name\":\"white\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44313/api/PenColorREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"PenColorREST"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "red",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"PenColorTest9\",function(){\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"PenColorTest10\",function(){\r",
+									"    pm.response.to.have.body('\"ok\"');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":2,\"name\":\"white2\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44313/api/PenColorREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"PenColorREST"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "red",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"PenColorTest11\",function(){\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"PenColorTest12\",function(){\r",
+									"    pm.response.to.have.body('[{\"id\":1,\"name\":\"red\"},{\"id\":2,\"name\":\"white2\"}]');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":2,\"name\":\"white2\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44313/api/PenColorREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"PenColorREST"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "red",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"PenColorTest13\",function(){\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"PenColorTest14\",function(){\r",
+									"    pm.response.to.have.body('\"ok\"');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":2,\"name\":\"white2\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44313/api/PenColorREST/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"PenColorREST",
+								"2"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "red",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"PenColorTest15\",function(){\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"PenColorTest16\",function(){\r",
+									"    pm.response.to.have.body('[{\"id\":1,\"name\":\"red\"}]');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":2,\"name\":\"white2\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44313/api/PenColorREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"PenColorREST"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "red",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PenType",
+			"item": [
+				{
+					"name": "1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44313/api/PenTypeREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"PenTypeREST"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":1,\"name\":\"ball pen\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44313/api/PenTypeREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"PenTypeREST"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":2,\"name\":\"gel pen\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44313/api/PenTypeREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"PenTypeREST"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pen",
+			"item": [
+				{
+					"name": "1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44313/api/PenREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"PenREST"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":1,\"name\":\"pen1\",\"id_pen_color\":1,\"id_pen_type\":1,\"description\":\"descr1\",\"photo_location\":\"testpath\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44313/api/PenREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"PenREST"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":1,\"name\":\"pen1\",\"id_pen_color\":5,\"id_pen_type\":1,\"description\":\"descr1\",\"photo_location\":\"testpath\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44313/api/PenREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"PenREST"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":2,\"name\":\"pen1\",\"id_pen_color\":0,\"id_pen_type\":2,\"description\":\"descr1\",\"photo_location\":\"testpath\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44313/api/PenREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"PenREST"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44313/api/PenREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"PenREST"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":2,\"name\":\"pen2\",\"id_pen_color\":0,\"id_pen_type\":1,\"description\":\"descr2\",\"photo_location\":\"testpath2\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44313/api/PenREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"PenREST"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":2,\"name\":\"white2\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44313/api/PenREST/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"PenREST",
+								"1"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "red",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "8",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44313/api/PenREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"PenREST"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shop",
+			"item": [
+				{
+					"name": "1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44313/api/ShopREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"ShopREST"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"shop1\",\"id\":1,\"address\":\"test_add1\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44313/api/ShopREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"ShopREST"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"shop2\",\"id\":2,\"address\":\"test_add2\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44313/api/ShopREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"ShopREST"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"shop2\",\"id\":2,\"address\":\"test_add2\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44313/api/ShopREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"ShopREST"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44313/api/ShopREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"ShopREST"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PenShopRelation",
+			"item": [
+				{
+					"name": "1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44313/api/PenShopRelREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"PenShopRelREST"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":1,\"id_pen\":2,\"id_shop\":1,\"price\":10,\"pen_number\":100}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44313/api/PenShopRelREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"PenShopRelREST"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":2,\"id_pen\":2,\"id_shop\":2,\"price\":11,\"pen_number\":90}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44313/api/PenShopRelREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"PenShopRelREST"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":3,\"id_pen\":2,\"id_shop\":2,\"price\":121,\"pen_number\":920}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44313/api/PenShopRelREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"PenShopRelREST"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44313/api/PenShopRelREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"PenShopRelREST"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":3,\"id_pen\":2,\"id_shop\":2,\"price\":122,\"pen_number\":922}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44313/api/PenShopRelREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"PenShopRelREST"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44313/api/PenShopRelREST/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"PenShopRelREST",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "8",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44313/api/PenShopRelREST",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44313",
+							"path": [
+								"api",
+								"PenShopRelREST"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
