@@ -15,8 +15,8 @@ namespace WEBLab0.Controllers
         {
             if (shops.Count == 0)
             {
-                shops.Add(new Shop() { id = 1, address = "м, вулиця Волоська, 55-57, Київ, 04070", name = "Стікер" });
-                shops.Add(new Shop() { id = 2, address = "26, проспект Свободи, Київ, 04215", name = "Канц Плюс" });
+                shops.Add(new Shop() { id = 1, address = "m, Voloska Street, 55-57, Kyiv, 04070", name = "Стікер" });
+                shops.Add(new Shop() { id = 2, address = "26, Svoboda Avenue, Kyiv, 04215", name = "Канц Плюс" });
             }
             return View(shops);
         }

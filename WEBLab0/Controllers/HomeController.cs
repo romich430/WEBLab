@@ -22,6 +22,13 @@ namespace WEBLab0.Controllers
         {
             return View();
         }
+        public IActionResult ShopMap()
+        {
+            var temp = ShopController.shops;
+            Main main = new Main();
+            main.shops = temp;
+            return View(main);
+        }
 
         public IActionResult Privacy()
         {

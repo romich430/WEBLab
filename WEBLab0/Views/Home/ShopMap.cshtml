@@ -1,0 +1,81 @@
+﻿@model WEBLab0.Models.Main
+@{
+    ViewData["Title"] = "ShopMap";
+}
+
+<h1>ShopMap</h1>
+<div id="map" style="height: 600px; width:600px;"></div>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCFCX2Jn5xhkzbROgMSUP-sUqDjUy94QpM"></script>
+@section scripts {
+    <script type="text/javascript">
+        var markers = [];
+        
+        function initialize() {
+            var last = new google.maps.LatLng(50, 50);
+            var myLL = new google.maps.LatLng(50, 50);
+
+            var mapOptions = {
+                center: myLL,
+                zoom: 14,
+                mapTypeId: google.maps.MapTypeId.G_NORMAL_MAP
+
+            };
+            const geocoder = new google.maps.Geocoder();
+            var map = new google.maps.Map(document.getElementById("map"),
+                mapOptions);
+            @foreach (var item in Model.shops)
+            {
+                
+                <text>
+            geocoder.geocode({ address: '@item.address' }, (results, status) => {
+                if (status === "OK") {
+                    
+                    addMarker(results[0].geometry.location, results[0].geometry.location[1],'@item.name');
+                       
+                } else {
+                    alert(
+                        "Geocode was not successful for the following reason: " + status
+                    );
+                }
+            });
+            </text>
+               
+
+            }
+            
+
+            function addMarker(geolat, geolong, name) 
+            {
+                //alert(geolat, geolong)
+                
+                var location = new google.maps.LatLng(geolat, geolong);
+                var marker = new google.maps.Marker({
+                    position: location,
+                    map: map,
+                    title: "Hello World!",
+
+
+                });
+                var infowindow = new google.maps.InfoWindow({
+                    content: "<p></p><p>" + name + "</p>"
+                });
+                marker.addListener('mouseout', function () {
+                    infowindow.close(map, marker);
+                });
+                marker.addListener('mouseover', function () {
+                    infowindow.open(map, marker);
+                });
+                map.setCenter(geolat);
+                markers.push(marker);
+            }
+
+            
+            
+        } //google.maps.event.itemddDomListener(window, 'load', initialize);
+        window.addEventListener('load', initialize);
+        
+
+
+    </script>
+}
+

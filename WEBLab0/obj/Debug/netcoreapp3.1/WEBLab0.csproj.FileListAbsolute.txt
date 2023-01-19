@@ -132,3 +132,4 @@ D:\WEBLab0\WEBLab0\obj\Debug\netcoreapp3.1\Razor\Views\PenShopRel\Index.cshtml.g
 D:\WEBLab0\WEBLab0\obj\Debug\netcoreapp3.1\Razor\Views\PenShopRel\Delete.cshtml.g.cs
 D:\WEBLab0\WEBLab0\obj\Debug\netcoreapp3.1\Razor\Views\PenShopRel\Edit.cshtml.g.cs
 D:\WEBLab0\WEBLab0\obj\Debug\netcoreapp3.1\Razor\Views\PenShopRel\Create.cshtml.g.cs
+D:\WEBLab0\WEBLab0\obj\Debug\netcoreapp3.1\Razor\Views\Home\ShopMap.cshtml.g.cs
