@@ -1,0 +1,12 @@
+﻿
+.pen_display{
+    height:500px;
+    width:95%;
+}
+
+.photo_display{
+    max-height:100%;
+    max-width:100%;
+    border-width:2px;
+    border-color:black;
+}

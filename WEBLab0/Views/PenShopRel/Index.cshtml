@@ -1,0 +1,58 @@
+﻿@model WEBLab0.Models.Main
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                id
+            </th>
+            <th>
+               id_pen
+            </th>
+            <th>
+                iud_shop
+            </th>
+            <th>
+                pen_number
+            </th>
+            <th>
+                price
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.rels) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_pen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_shop)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pen_number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

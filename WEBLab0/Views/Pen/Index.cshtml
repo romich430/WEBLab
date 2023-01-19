@@ -1,0 +1,62 @@
+﻿@model WEBLab0.Models.Main
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.pen.id)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.pen.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pen.id_pen_color)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pen.id_pen_type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pen.description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.pens) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Model.penColors.Find(e=>e.id==item.id_pen_color).name
+            </td>
+            <td>
+                @Model.penTypes.Find(e => e.id == item.id_pen_type).name
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.description)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { item.id }) |
+                @Html.ActionLink("Details", "Details", new { item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { item.id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
