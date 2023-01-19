@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewData["Title"] = "ToDoList";
+}
+<script type="text/javascript">
+
+    window.onload = function () {
+        var test = JSON.parse(localStorage.getItem('todoList'));
+        document.getElementById('todo_list').innerHTML = test;
+        //alert(test);
+    }
+    window.onunload = function () {
+        var html = JSON.stringify(document.getElementById('todo_list').innerHTML);
+        //alert(html);
+        localStorage.setItem('todoList', html);
+        
+    }
+
+</script>
+
+<h1>ToDoList</h1>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            <p>Input ToDo:</p>
+        </div>
+        <input class="col-4" type="text" id="todo_val"/>
+        <button class="col-4 btn btn-success"type="button" id="add_btn" onclick="add_todo()">Add</button>
+    </div>
+    <div class="row mt-1 border" id="todo_list"></div>
+</div>
+
+<script type="text/javascript">
+    var todoList = document.getElementById('todo_list');
+    function add_todo(event) {
+        var val = document.getElementById('todo_val').value;
+        //alert(val);
+        //alert(todoList)
+        todoList.innerHTML = todoList.innerHTML + '<div class="col-12 border border-dark mt-1">' + val + '</div>';
+    }
+</script>
+
