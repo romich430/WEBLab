@@ -15,11 +15,15 @@ namespace WEBLab0.Controllers
         public static List<Pen> pens = new List<Pen>();
         public static List<PenColors> pc0 = new List<PenColors>();
         public static List<PenTypes> pt0 = new List<PenTypes>();
+        public static PaginationParams saved_params = new PaginationParams();
         
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult Get([FromQuery] PaginationParams @params)
         {
-            return new JsonResult(pens);
+            
+            saved_params.Page = @params.Page > 0 ? @params.Page : saved_params.Page + 1;
+            var res = pens.OrderBy(e => e.name).Skip((saved_params.Page - 1) * @params.ItemsPerPage).Take(@params.ItemsPerPage).ToList();
+            return new JsonResult(res);
         }
         [HttpPost]
         public IActionResult Post(Pen pen)
