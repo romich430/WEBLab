@@ -2,21 +2,12 @@
 @{
     ViewData["Title"] = "ToDoList";
 }
-<script type="text/javascript">
 
-    window.onload = function () {
-        var test = JSON.parse(localStorage.getItem('todoList'));
-        document.getElementById('todo_list').innerHTML = test;
-        //alert(test);
-    }
-    window.onunload = function () {
-        var html = JSON.stringify(document.getElementById('todo_list').innerHTML);
-        //alert(html);
-        localStorage.setItem('todoList', html);
-        
-    }
 
-</script>
+<script src="~/js/DragObject.js"></script>
+<script src="~/js/DropTarget.js"></script>
+<script src="~/js/dragMaster.js"></script>
+<script src="~/js/helpers.js"></script>
 
 <h1>ToDoList</h1>
 
@@ -25,11 +16,12 @@
         <div class="col-2">
             <p>Input ToDo:</p>
         </div>
-        <input class="col-4" type="text" id="todo_val"/>
-        <button class="col-4 btn btn-success"type="button" id="add_btn" onclick="add_todo()">Add</button>
+        <input class="col-4" type="text" id="todo_val" />
+        <button class="col-4 btn btn-success" type="button" id="add_btn" onclick="add_todo()">Add</button>
     </div>
-    <div class="row mt-1 border" id="todo_list"></div>
+
 </div>
+<div class="container border" id="todo_list" style="min-height:500px;"></div>
 
 <script type="text/javascript">
     var todoList = document.getElementById('todo_list');
@@ -37,7 +29,34 @@
         var val = document.getElementById('todo_val').value;
         //alert(val);
         //alert(todoList)
-        todoList.innerHTML = todoList.innerHTML + '<div class="col-12 border border-dark mt-1">' + val + '</div>';
+        todoList.innerHTML = todoList.innerHTML + '<div class="row border border-dark mt-1" style="max-height:max-content;">' + val + '</div>';
+        document.location.reload();
     }
+
+
+
+</script>
+<script type="text/javascript">
+
+    window.onload = function () {
+        var test = JSON.parse(localStorage.getItem('todoList'));
+        document.getElementById('todo_list').innerHTML = test;
+
+        var dragObjects = document.getElementById('todo_list').getElementsByTagName('div');
+        for (var i = 0; i < dragObjects.length; i++) {
+            new DragObject(dragObjects[i])
+        }
+
+        new DropTarget(document.getElementById('todo_list'));
+
+        //alert(test);
+    }
+    window.onunload = function () {
+        var html = JSON.stringify(document.getElementById('todo_list').innerHTML);
+        //alert(html);
+        localStorage.setItem('todoList', html);
+
+    }
+
 </script>
 
