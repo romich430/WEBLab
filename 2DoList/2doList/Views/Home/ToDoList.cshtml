@@ -57,6 +57,11 @@
         localStorage.setItem('todoList', html);
 
     }
+    window.addEventListener('storage', function (event) {
+        console.log(event.key);
+        var test = JSON.parse(localStorage.getItem('todoList'));
+        document.getElementById('todo_list').innerHTML = test;
+    });
 
 </script>
 
